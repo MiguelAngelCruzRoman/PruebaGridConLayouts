@@ -1,0 +1,117 @@
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:id="@+id/LayoutIzquierda"
+                android:layout_width="81dp"
+                android:layout_height="599dp"
+                android:orientation="vertical"
+                android:background="#FF0000"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+
+            <ImageView
+                    android:id="@+id/hormigaTortuga"
+                    android:layout_width="match_parent"
+                    android:layout_height="199dp"
+                    app:srcCompat="@drawable/hormigatortuga"/>
+
+            <ImageView
+                    android:id="@+id/hormigaFuegoEuropea"
+                    android:layout_width="match_parent"
+                    android:layout_height="199dp"
+                    app:srcCompat="@drawable/hormigafuegoeuropea"/>
+
+            <ImageView
+                    android:id="@+id/hormigaChicatana"
+                    android:layout_width="match_parent"
+                    android:layout_height="199dp"
+                    app:srcCompat="@drawable/hormigachicatana"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/LayoutDerecha"
+                android:layout_width="84dp"
+                android:layout_height="599dp"
+                android:orientation="vertical"
+                android:background="#FF0000"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="199dp" app:srcCompat="@drawable/chapulinoscuro"
+                    android:id="@+id/chapulinOscuro"/>
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="199dp" app:srcCompat="@drawable/chapulinmilpa"
+                    android:id="@+id/chapulinMilpa"/>
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="199dp" app:srcCompat="@drawable/chapulinareana"
+                    android:id="@+id/chapulinArena"/>
+        </LinearLayout>
+        <LinearLayout
+                android:id="@+id/LayoutAbajo"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:orientation="horizontal"
+                android:gravity="end"
+                android:background="#FF0000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/LayoutIzquierda"
+                app:layout_constraintEnd_toStartOf="@id/LayoutDerecha">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" app:srcCompat="@drawable/chinchejumil"
+                    android:id="@+id/chincheJumil" android:layout_weight="1"/>
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" app:srcCompat="@drawable/chincheverde"
+                    android:id="@+id/chincheVerde" android:layout_weight="1"/>
+        </LinearLayout>
+        <LinearLayout
+                android:id="@+id/LayoutArriba"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal"
+                android:background="#FF0000"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/LayoutIzquierda"
+                app:layout_constraintEnd_toStartOf="@id/LayoutDerecha">
+
+        <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" app:srcCompat="@drawable/grillomatorral"
+                    android:id="@+id/grilloMatorral" android:layout_weight="1"/>
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" app:srcCompat="@drawable/grillocorteza"
+                    android:id="@+id/grilloCorteza" android:layout_weight="1"/>
+        </LinearLayout>
+
+        <GridView
+                android:id="@+id/GridViewDragDrop"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toEndOf="@id/LayoutIzquierda"
+                app:layout_constraintEnd_toStartOf="@id/LayoutDerecha"
+                app:layout_constraintTop_toBottomOf="@id/LayoutArriba"
+                app:layout_constraintBottom_toTopOf="@id/LayoutAbajo"
+                android:numColumns="2">
+
+        </GridView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
