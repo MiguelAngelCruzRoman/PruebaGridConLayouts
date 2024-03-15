@@ -1,4 +1,5 @@
 package com.example.pruebagridlayout
+
 import android.content.Context
 import android.graphics.Color
 import android.view.View
@@ -9,16 +10,18 @@ import android.widget.TextView
 
 class CuadriculaGridView(private val context: Context) : BaseAdapter() {
 
+    private val items = mutableListOf<Any>()
+
     override fun getCount(): Int {
-        return 4
+        return items.size
     }
 
     override fun getItem(position: Int): Any {
-        return Any()
+        return items[position]
     }
 
     override fun getItemId(position: Int): Long {
-        return 0
+        return position.toLong()
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
@@ -37,6 +40,8 @@ class CuadriculaGridView(private val context: Context) : BaseAdapter() {
         }
 
         // Bloque pa' wachar que sí se crean
+        //Nota: al correr la aplicación ya no se muestran los colores de los cuadrantes
+        //Supongo que aquí está el problema de funcionalidad del "drop"
         when (position) {
             0 -> textView.setBackgroundColor(Color.BLUE)
             1 -> textView.setBackgroundColor(Color.GREEN)
@@ -47,4 +52,12 @@ class CuadriculaGridView(private val context: Context) : BaseAdapter() {
 
         return textView
     }
+
+    fun addItem(item: Any) {
+        items.add(item)
+        notifyDataSetChanged()
+    }
 }
+
+
+
